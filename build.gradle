@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        maven {
+            url = "https://maven.minecraftforge.net/"
+        }
+        maven {
+            url = "https://libraries.minecraft.net/"
+        }
+        jcenter()
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+repositories {
+    maven {
+        url = "https://maven.minecraftforge.net/"
+    }
+    maven {
+        url = "https://libraries.minecraft.net/"
+    }
+    jcenter()
+    mavenCentral()
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "1.2"
+group = "com.example.fillloot"
+archivesBaseName = "filllootmod"
+
+sourceCompatibility = targetCompatibility = "1.8"
+
+minecraft {
+    version = "1.12.2-14.23.5.2847"
+    runDir = "run"
+    mappings = "snapshot_20171003"
+    makeObfSourceJar = false
+}
+
+dependencies {
+}
+
+jar {
+    manifest {
+        attributes 'FMLCorePluginContainsMod': 'true'
+    }
+}
+
